@@ -67,17 +67,18 @@ class FineAggregateController: UIViewController {
     {
         super.viewDidLoad()
         scrollView.contentSize.width = 650
-        scrollView.contentSize.height = 600
+        scrollView.contentSize.height = 650
+        
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+
+        
     }
     
     @IBAction func computePressed(sender: AnyObject)
     {
-
-        
             self.computeMoisture()
-        
-
-        
+            self.sieveAnalysis()
     }
     
     func computeMoisture()
@@ -94,6 +95,93 @@ class FineAggregateController: UIViewController {
         
     }
     
+    func sieveAnalysis()
+    {   let pass0 : Double = 100
+        if let data1 = Double(input1.text!)
+        {
+            if let data2 = Double(input2.text!){
+                if let data3 = Double(input3.text!){
+                    if let data4 = Double(input4.text!){
+                        if let data5 = Double(input5.text!){
+                            if let data6 = Double(input6.text!){
+                                if let data7 = Double(input7.text!){
+                                    if let data8 = Double(input8.text!){
+                                        let total = data1+data2+data3+data4+data5+data6+data7+data8
+                                        let ret1 = data1/total*100
+                                        let pass1 = pass0-ret1
+                                        let ret2 = data2/total*100
+                                        let pass2 = pass1-ret2
+                                        let ret3 = data3/total*100
+                                        let pass3 = pass2-ret3
+                                        let ret4 = data4/total*100
+                                        let pass4 = pass3-ret4
+                                        let ret5 = data5/total*100
+                                        let pass5 = pass4-ret5
+                                        let ret6 = data6/total*100
+                                        let pass6 = pass5-ret6
+                                        let ret7 = data7/total*100
+                                        let pass7 = pass6-ret7
+                                        let ret8 = data8/total*100
+                                        
+                                        retained1.text = String(format:"%.2f", ret1)
+                                        retained2.text = String(format:"%.2f", ret2)
+                                        retained3.text = String(format:"%.2f", ret3)
+                                        retained4.text = String(format:"%.2f", ret4)
+                                        retained5.text = String(format:"%.2f", ret5)
+                                        retained6.text = String(format:"%.2f", ret6)
+                                        retained7.text = String(format:"%.2f", ret7)
+                                        retained8.text = String(format:"%.2f", ret8)
+                                        
+                                        Passed1.text = String(format:"%.2f", pass1)
+                                        Passed2.text = String(format:"%.2f", pass2)
+                                        Passed3.text = String(format:"%.2f", pass3)
+                                        Passed4.text = String(format:"%.2f", pass4)
+                                        Passed5.text = String(format:"%.2f", pass5)
+                                        Passed6.text = String(format:"%.2f", pass6)
+                                        Passed7.text = String(format:"%.2f", pass7)
+                                        
+
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+//    
+//    
+//    func keyboardWillShow(sender: NSNotification) {
+//        let userInfo: [NSObject : AnyObject] = sender.userInfo!
+//        scrollView.contentSize.height = 1000
+//        
+//        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
+//        let offset: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue.size
+//        
+//        if keyboardSize.height == offset.height {
+//            if self.view.frame.origin.y == 0 {
+//                UIView.animateWithDuration(0.1, animations: { () -> Void in
+//                    self.view.frame.origin.y -= keyboardSize.height
+//                })
+//            }
+//        } else {
+//            UIView.animateWithDuration(0.1, animations: { () -> Void in
+//                self.view.frame.origin.y += keyboardSize.height - offset.height
+//            })
+//        }
+//        print(self.view.frame.origin.y)
+//    
+//    }
+//    
+//    func keyboardWillHide(notification: NSNotification) {
+//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+//            self.view.frame.origin.y += keyboardSize.height
+//        }
+//    }
+//    
+    
     func errorInput(){
         let alertController = UIAlertController(title: "Error", message:
             "Invalid Input, Please type valid input!", preferredStyle: UIAlertControllerStyle.Alert)
@@ -101,5 +189,4 @@ class FineAggregateController: UIViewController {
         
         self.presentViewController(alertController, animated: true, completion: nil)
     }
-
 }
