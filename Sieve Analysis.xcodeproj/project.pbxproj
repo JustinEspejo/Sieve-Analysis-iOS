@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED8BAE4B1C48CF80003DD19D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BAE4A1C48CF80003DD19D /* ViewController.swift */; };
+		ED8BAE4D1C48CFCA003DD19D /* FineAggregateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BAE4C1C48CFCA003DD19D /* FineAggregateController.swift */; };
 		EDE7EFEE1C4870F700177A8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE7EFED1C4870F700177A8D /* AppDelegate.swift */; };
-		EDE7EFF01C4870F700177A8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE7EFEF1C4870F700177A8D /* ViewController.swift */; };
 		EDE7EFF31C4870F800177A8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE7EFF11C4870F800177A8D /* Main.storyboard */; };
 		EDE7EFF51C4870F800177A8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE7EFF41C4870F800177A8D /* Assets.xcassets */; };
 		EDE7EFF81C4870F800177A8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE7EFF61C4870F800177A8D /* LaunchScreen.storyboard */; };
@@ -34,9 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED8BAE4A1C48CF80003DD19D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED8BAE4C1C48CFCA003DD19D /* FineAggregateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FineAggregateController.swift; sourceTree = "<group>"; };
 		EDE7EFEA1C4870F700177A8D /* Sieve Analysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sieve Analysis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE7EFED1C4870F700177A8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EDE7EFEF1C4870F700177A8D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EDE7EFF21C4870F800177A8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDE7EFF41C4870F800177A8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDE7EFF71C4870F800177A8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,11 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				EDE7EFED1C4870F700177A8D /* AppDelegate.swift */,
-				EDE7EFEF1C4870F700177A8D /* ViewController.swift */,
 				EDE7EFF11C4870F800177A8D /* Main.storyboard */,
 				EDE7EFF41C4870F800177A8D /* Assets.xcassets */,
 				EDE7EFF61C4870F800177A8D /* LaunchScreen.storyboard */,
 				EDE7EFF91C4870F800177A8D /* Info.plist */,
+				ED8BAE4A1C48CF80003DD19D /* ViewController.swift */,
+				ED8BAE4C1C48CFCA003DD19D /* FineAggregateController.swift */,
 			);
 			path = "Sieve Analysis";
 			sourceTree = "<group>";
@@ -259,7 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDE7EFF01C4870F700177A8D /* ViewController.swift in Sources */,
+				ED8BAE4B1C48CF80003DD19D /* ViewController.swift in Sources */,
+				ED8BAE4D1C48CFCA003DD19D /* FineAggregateController.swift in Sources */,
 				EDE7EFEE1C4870F700177A8D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +491,7 @@
 				EDE7F0141C4870F800177A8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDE7F0151C4870F800177A8D /* Build configuration list for PBXNativeTarget "Sieve AnalysisTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +500,7 @@
 				EDE7F0171C4870F800177A8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDE7F0181C4870F800177A8D /* Build configuration list for PBXNativeTarget "Sieve AnalysisUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +509,7 @@
 				EDE7F01A1C4870F800177A8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
