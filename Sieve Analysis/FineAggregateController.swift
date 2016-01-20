@@ -60,6 +60,8 @@ class FineAggregateController: UIViewController {
     @IBOutlet weak var fm5: UILabel!
     @IBOutlet weak var fm6: UILabel!
     @IBOutlet weak var fm7: UILabel!
+    @IBOutlet weak var FinenessModulus: UILabel!
+
     
     
     
@@ -69,8 +71,8 @@ class FineAggregateController: UIViewController {
         scrollView.contentSize.width = 650
         scrollView.contentSize.height = 650
         
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
 
         
     }
@@ -97,8 +99,7 @@ class FineAggregateController: UIViewController {
     
     func sieveAnalysis()
     {   let pass0 : Double = 100
-        if let data1 = Double(input1.text!)
-        {
+        if let data1 = Double(input1.text!){
             if let data2 = Double(input2.text!){
                 if let data3 = Double(input3.text!){
                     if let data4 = Double(input4.text!){
@@ -122,6 +123,7 @@ class FineAggregateController: UIViewController {
                                         let ret7 = data7/total*100
                                         let pass7 = pass6-ret7
                                         let ret8 = data8/total*100
+                                        let ret9 = ret1+ret2+ret3+ret4+ret5+ret6+ret7+ret8
                                         
                                         retained1.text = String(format:"%.2f", ret1)
                                         retained2.text = String(format:"%.2f", ret2)
@@ -131,6 +133,9 @@ class FineAggregateController: UIViewController {
                                         retained6.text = String(format:"%.2f", ret6)
                                         retained7.text = String(format:"%.2f", ret7)
                                         retained8.text = String(format:"%.2f", ret8)
+                                        retained9.text = String(format:"%.2f", ret9)
+                                        
+                                        totalMass.text = String(total)
                                         
                                         Passed1.text = String(format:"%.2f", pass1)
                                         Passed2.text = String(format:"%.2f", pass2)
@@ -140,6 +145,26 @@ class FineAggregateController: UIViewController {
                                         Passed6.text = String(format:"%.2f", pass6)
                                         Passed7.text = String(format:"%.2f", pass7)
                                         
+                                        let finenessModulus1 = pass0-pass1
+                                        let finenessModulus2 = pass0-pass2
+                                        let finenessModulus3 = pass0-pass3
+                                        let finenessModulus4 = pass0-pass4
+                                        let finenessModulus5 = pass0-pass5
+                                        let finenessModulus6 = pass0-pass6
+                                        let finenessModulus7 = pass0-pass7
+                                        
+                                        fm1.text = String(format:"%.2f", finenessModulus1)
+                                        fm2.text = String(format:"%.2f", finenessModulus2)
+                                        fm3.text = String(format:"%.2f", finenessModulus3)
+                                        fm4.text = String(format:"%.2f", finenessModulus4)
+                                        fm5.text = String(format:"%.2f", finenessModulus5)
+                                        fm6.text = String(format:"%.2f", finenessModulus6)
+                                        fm7.text = String(format:"%.2f", finenessModulus7)
+
+
+                                       let finenessModulus = (finenessModulus1+finenessModulus2+finenessModulus3+finenessModulus4+finenessModulus5+finenessModulus6+finenessModulus7)/100
+                                        
+                                        FinenessModulus.text = String(format:"%.2f", finenessModulus)
 
                                         
                                     }
@@ -151,11 +176,13 @@ class FineAggregateController: UIViewController {
             }
         }
     }
-//    
-//    
-//    func keyboardWillShow(sender: NSNotification) {
+    
+    
+    func keyboardWillShow(sender: NSNotification) {
+        
+        scrollView.contentSize.height = 700
+//
 //        let userInfo: [NSObject : AnyObject] = sender.userInfo!
-//        scrollView.contentSize.height = 1000
 //        
 //        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
 //        let offset: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue.size
@@ -173,14 +200,19 @@ class FineAggregateController: UIViewController {
 //        }
 //        print(self.view.frame.origin.y)
 //    
-//    }
-//    
-//    func keyboardWillHide(notification: NSNotification) {
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        
+        scrollView.contentSize.height = 600
+
+//        
 //        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
 //            self.view.frame.origin.y += keyboardSize.height
+        
 //        }
-//    }
-//    
+    }
+    
     
     func errorInput(){
         let alertController = UIAlertController(title: "Error", message:
