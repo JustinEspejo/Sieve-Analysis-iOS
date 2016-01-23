@@ -10,6 +10,9 @@ import UIKit
 
 class FineAggregateController: UIViewController {
 
+    @IBOutlet weak var mySwitch: UISwitch!
+
+    @IBOutlet weak var specLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var computeButton: UIBarButtonItem!
     
@@ -32,6 +35,16 @@ class FineAggregateController: UIViewController {
     //Total Mass
     @IBOutlet weak var totalMass: UILabel!
     
+    @IBOutlet weak var spec1: UILabel!
+    @IBOutlet weak var spec2: UILabel!
+    @IBOutlet weak var spec3: UILabel!
+    @IBOutlet weak var spec4: UILabel!
+    @IBOutlet weak var spec5: UILabel!
+    @IBOutlet weak var spec6: UILabel!
+    @IBOutlet weak var spec7: UILabel!
+    
+    
+    
     //% Retained
     @IBOutlet weak var retained1: UILabel!
     @IBOutlet weak var retained2: UILabel!
@@ -53,6 +66,7 @@ class FineAggregateController: UIViewController {
     @IBOutlet weak var Passed7: UILabel!
     
     //Fineness Modulus
+    @IBOutlet weak var fmLabel: UILabel!
     @IBOutlet weak var fm1: UILabel!
     @IBOutlet weak var fm2: UILabel!
     @IBOutlet weak var fm3: UILabel!
@@ -75,6 +89,51 @@ class FineAggregateController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
 
         
+    }
+    
+    @IBAction func switchSpec(sender: AnyObject) {
+        if mySwitch.on {
+
+            specLabel.text = "Spec"
+            
+            spec1.hidden = false
+            spec2.hidden = false
+            spec3.hidden = false
+            spec4.hidden = false
+            spec5.hidden = false
+            spec6.hidden = false
+            spec7.hidden = false
+
+            
+            fm1.hidden = true
+            fm2.hidden = true
+            fm3.hidden = true
+            fm4.hidden = true
+            fm5.hidden = true
+            fm6.hidden = true
+            fm7.hidden = true
+  
+        }
+        else {
+            specLabel.text = "F.M."
+            
+            spec1.hidden = true
+            spec2.hidden = true
+            spec3.hidden = true
+            spec4.hidden = true
+            spec5.hidden = true
+            spec6.hidden = true
+            spec7.hidden = true
+            
+            fm1.hidden = false
+            fm2.hidden = false
+            fm3.hidden = false
+            fm4.hidden = false
+            fm5.hidden = false
+            fm6.hidden = false
+            fm7.hidden = false
+            
+        }
     }
     
     @IBAction func computePressed(sender: AnyObject)
@@ -167,14 +226,14 @@ class FineAggregateController: UIViewController {
                                         FinenessModulus.text = String(format:"%.2f", finenessModulus)
 
                                         
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+                                    }else {errorInput()}
+                                }else {errorInput()}
+                            }else {errorInput()}
+                        }else {errorInput()}
+                    }else {errorInput()}
+                }else {errorInput()}
+            }else {errorInput()}
+        }else {errorInput()}
     }
     
     

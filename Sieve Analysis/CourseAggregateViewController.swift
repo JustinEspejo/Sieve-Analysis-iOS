@@ -22,12 +22,20 @@ class CourseAggregateViewController: UIViewController {
     var spec4 : String = " "
     var spec5 : String = " "
 
+    @IBOutlet weak var wetMass: UITextField!
+    @IBOutlet weak var dryMass: UITextField!
+    @IBOutlet weak var waterWeight: UILabel!
+    @IBOutlet weak var moistureContent: UILabel!
+    
+    
     //sieve size label
     @IBOutlet weak var size1: UILabel!
     @IBOutlet weak var size2: UILabel!
     @IBOutlet weak var size3: UILabel!
     @IBOutlet weak var size4: UILabel!
     @IBOutlet weak var size5: UILabel!
+
+    @IBOutlet weak var scrollView: UIScrollView!
     
     //
    
@@ -76,14 +84,32 @@ class CourseAggregateViewController: UIViewController {
         specLabel3.text = spec3
         specLabel4.text = spec4
         specLabel5.text = spec5
+        
+        if (spec5==" ")
+        {
+        mass5.hidden = true
+        ret5.hidden = true
+        pass5.hidden = true
+        mass5.text = "0"
 
+        }
+        else{
+        mass5.hidden = false
+        ret5.hidden = false
+        pass5.hidden = false
+        }
         
 
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.contentSize.width = 650
+        scrollView.contentSize.height = 650
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+
         
         // Do any additional setup after loading the view.
     }
@@ -96,6 +122,8 @@ class CourseAggregateViewController: UIViewController {
 
     @IBAction func computePressed(sender: AnyObject)
     {
+        computeMoisture()
+        
         let passed0 : Double = 100.0
         if let data1 = Double(mass1.text!){
             if let data2 = Double(mass2.text!){
@@ -134,14 +162,47 @@ class CourseAggregateViewController: UIViewController {
                                 pass3.text = String(format:"%.2f", passed3)
                                 pass4.text = String(format:"%.2f", passed4)
                                 pass5.text = String(format:"%.2f", passed5)
-
                                 
-
-                                
-
-
-
-                                
-                            }}}}}}
+                            }else {errorInput()}
+                        }else {errorInput()}
+                    }else {errorInput()}
+                }else {errorInput()}
+            }else {errorInput()}
+        }else {errorInput()}
+    }
+    
+    func computeMoisture()
+    {
+        if let wet = Double(wetMass.text!){
+            if let dry = Double(dryMass.text!){
+                let water = wet - dry
+                let moisture = (water/dry)*100
+                waterWeight.text = String(water) + "g"
+                moistureContent.text = String(format:"%.2f", moisture) + "%"
+            }else {errorInput()}
+        }else {errorInput()}
+        
+        
+    }
+    
+    
+    func errorInput(){
+        let alertController = UIAlertController(title: "Error", message:
+            "Invalid Input, Please type valid input!", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        
+        scrollView.contentSize.height = 700
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        
+        scrollView.contentSize.height = 600
+        
     }
 }

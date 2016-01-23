@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ED24BEE91C52EAFC00AB628E /* CoursePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24BEE81C52EAFC00AB628E /* CoursePickerViewController.swift */; };
+		ED61ADA31C543DDE00156324 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED61ADA21C543DDE00156324 /* CreditsViewController.swift */; };
 		ED8BAE4B1C48CF80003DD19D /* CourseAggregateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BAE4A1C48CF80003DD19D /* CourseAggregateViewController.swift */; };
 		ED8BAE4D1C48CFCA003DD19D /* FineAggregateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BAE4C1C48CFCA003DD19D /* FineAggregateController.swift */; };
 		EDE7EFEE1C4870F700177A8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE7EFED1C4870F700177A8D /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		ED24BEE81C52EAFC00AB628E /* CoursePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursePickerViewController.swift; sourceTree = "<group>"; };
+		ED61ADA21C543DDE00156324 /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		ED8BAE4A1C48CF80003DD19D /* CourseAggregateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseAggregateViewController.swift; sourceTree = "<group>"; };
 		ED8BAE4C1C48CFCA003DD19D /* FineAggregateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FineAggregateController.swift; sourceTree = "<group>"; };
 		EDE7EFEA1C4870F700177A8D /* Sieve Analysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sieve Analysis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +125,7 @@
 				EDE7EFF41C4870F800177A8D /* Assets.xcassets */,
 				EDE7EFF61C4870F800177A8D /* LaunchScreen.storyboard */,
 				EDE7EFF91C4870F800177A8D /* Info.plist */,
+				ED61ADA21C543DDE00156324 /* CreditsViewController.swift */,
 				ED24BEEA1C52EB0800AB628E /* Course */,
 				ED24BEEB1C52EB4500AB628E /* Fine */,
 			);
@@ -285,6 +288,7 @@
 				ED8BAE4D1C48CFCA003DD19D /* FineAggregateController.swift in Sources */,
 				ED24BEE91C52EAFC00AB628E /* CoursePickerViewController.swift in Sources */,
 				EDE7EFEE1C4870F700177A8D /* AppDelegate.swift in Sources */,
+				ED61ADA31C543DDE00156324 /* CreditsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
