@@ -224,7 +224,7 @@
 				TargetAttributes = {
 					EDE7EFE91C4870F700177A8D = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = GWARJ29EYF;
+						DevelopmentTeam = HA5TU4C4T4;
 					};
 					EDE7EFFD1C4870F800177A8D = {
 						CreatedOnToolsVersion = 7.2;
@@ -438,10 +438,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Sieve Analysis/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.snowcialite.Sieve-Analysis";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SonLoku.Sieve-Analysis";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -449,10 +451,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Sieve Analysis/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.snowcialite.Sieve-Analysis";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SonLoku.Sieve-Analysis";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

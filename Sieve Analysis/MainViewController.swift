@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import iAd
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController , ADBannerViewDelegate{
 
     @IBOutlet weak var creditsButton: UIButton!
     @IBOutlet weak var fineButton: UIButton!
     @IBOutlet weak var courseButton: UIButton!
+    @IBOutlet weak var banner: ADBannerView!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        banner.hidden = true
+        banner.delegate = self
+        self.canDisplayBannerAds = true
 
         // Do any additional setup after loading the view.
     }
@@ -22,6 +30,22 @@ class MainViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
+        NSLog("banner error")
+    }
+    
+    func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
+        return true
+    }
+    
+    func bannerViewDidLoadAd(banner: ADBannerView!) {
+        self.banner.hidden = false
+    }
+    
+    func bannerViewWillLoadAd(banner: ADBannerView!) {
+        
     }
     
 //    func buttonDesign()
