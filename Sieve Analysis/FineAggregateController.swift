@@ -85,6 +85,19 @@ class FineAggregateController: UIViewController {
         scrollView.contentSize.width = 650
         scrollView.contentSize.height = 650
         
+        input1.keyboardType = UIKeyboardType.DecimalPad
+        input2.keyboardType = UIKeyboardType.DecimalPad
+        input3.keyboardType = UIKeyboardType.DecimalPad
+        input4.keyboardType = UIKeyboardType.DecimalPad
+        input5.keyboardType = UIKeyboardType.DecimalPad
+        input6.keyboardType = UIKeyboardType.DecimalPad
+        input7.keyboardType = UIKeyboardType.DecimalPad
+        input8.keyboardType = UIKeyboardType.DecimalPad
+
+        wetMass.keyboardType = UIKeyboardType.DecimalPad
+        dryMass.keyboardType = UIKeyboardType.DecimalPad
+
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
 

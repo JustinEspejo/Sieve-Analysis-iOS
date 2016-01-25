@@ -107,6 +107,18 @@ class CourseAggregateViewController: UIViewController {
         scrollView.contentSize.width = 650
         scrollView.contentSize.height = 650
         
+        mass1.keyboardType = UIKeyboardType.DecimalPad
+        mass2.keyboardType = UIKeyboardType.DecimalPad
+        mass3.keyboardType = UIKeyboardType.DecimalPad
+        mass4.keyboardType = UIKeyboardType.DecimalPad
+        mass5.keyboardType = UIKeyboardType.DecimalPad
+        mass6.keyboardType = UIKeyboardType.DecimalPad
+        
+        wetMass.keyboardType = UIKeyboardType.DecimalPad
+        dryMass.keyboardType = UIKeyboardType.DecimalPad
+
+
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
 

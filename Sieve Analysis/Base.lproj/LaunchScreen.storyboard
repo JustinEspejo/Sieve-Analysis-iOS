@@ -17,42 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sieve Analysis Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvM-LR-Yjc">
-                                <rect key="frame" x="103" y="67" width="395" height="75"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Screen Shot 2016-01-23 at 5.25.01 PM" translatesAutoresizingMaskIntoConstraints="NO" id="Mvg-0s-Md8">
-                                <rect key="frame" x="222" y="150" width="157" height="97"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="157" id="8ZI-4Z-fAk"/>
-                                    <constraint firstAttribute="height" constant="97" id="NKj-Q1-D1y"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sieve Analysis Calculator is owned by Loku Inc." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRp-Vx-Pxs">
-                                <rect key="frame" x="139" y="261" width="322" height="61"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Developed by : Justin Espejo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmY-cV-8Rq">
-                                <rect key="frame" x="190" y="340" width="220" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeH-OJ-Bk9">
+                                <rect key="frame" x="192" y="289" width="217" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Sieve Analysis Calculator 1.0">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="18" name="GillSans"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bvM-LR-Yjc" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="47" id="2MC-ZR-sfN"/>
-                            <constraint firstItem="lmY-cV-8Rq" firstAttribute="top" secondItem="tRp-Vx-Pxs" secondAttribute="bottom" constant="18" id="4Dk-0l-jhO"/>
-                            <constraint firstItem="Mvg-0s-Md8" firstAttribute="top" secondItem="bvM-LR-Yjc" secondAttribute="bottom" constant="8" id="9vX-4K-laU"/>
-                            <constraint firstItem="tRp-Vx-Pxs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="E96-g7-aAO"/>
-                            <constraint firstItem="Mvg-0s-Md8" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="VtU-ue-5gh"/>
-                            <constraint firstItem="tRp-Vx-Pxs" firstAttribute="centerX" secondItem="bvM-LR-Yjc" secondAttribute="centerX" constant="-0.5" id="Xro-T3-1vE"/>
-                            <constraint firstItem="lmY-cV-8Rq" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nGb-tc-kwA"/>
-                            <constraint firstItem="tRp-Vx-Pxs" firstAttribute="top" secondItem="Mvg-0s-Md8" secondAttribute="bottom" constant="14" id="s7h-OU-4Ei"/>
+                            <constraint firstItem="EeH-OJ-Bk9" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ZDd-tv-Ib5"/>
+                            <constraint firstItem="EeH-OJ-Bk9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="slH-oc-hmF"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -61,7 +42,4 @@
             <point key="canvasLocation" x="-9" y="197"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Screen Shot 2016-01-23 at 5.25.01 PM" width="336" height="340"/>
-    </resources>
 </document>
