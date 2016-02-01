@@ -123,6 +123,37 @@ class CourseAggregateViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
 
         
+        pass1.layer.borderWidth = 0.5
+        pass1.layer.borderColor = UIColor.blackColor().CGColor
+        pass2.layer.borderWidth = 0.5
+        pass2.layer.borderColor = UIColor.blackColor().CGColor
+        pass3.layer.borderWidth = 0.5
+        pass3.layer.borderColor = UIColor.blackColor().CGColor
+        pass4.layer.borderWidth = 0.5
+        pass4.layer.borderColor = UIColor.blackColor().CGColor
+        pass5.layer.borderWidth = 0.5
+        pass5.layer.borderColor = UIColor.blackColor().CGColor
+        
+        ret1.layer.borderWidth = 0.5
+        ret1.layer.borderColor = UIColor.blackColor().CGColor
+        ret2.layer.borderWidth = 0.5
+        ret2.layer.borderColor = UIColor.blackColor().CGColor
+        ret3.layer.borderWidth = 0.5
+        ret3.layer.borderColor = UIColor.blackColor().CGColor
+        ret4.layer.borderWidth = 0.5
+        ret4.layer.borderColor = UIColor.blackColor().CGColor
+        ret5.layer.borderWidth = 0.5
+        ret5.layer.borderColor = UIColor.blackColor().CGColor
+        ret6.layer.borderWidth = 0.5
+        ret6.layer.borderColor = UIColor.blackColor().CGColor
+        ret7.layer.borderWidth = 0.5
+        ret7.layer.borderColor = UIColor.blackColor().CGColor
+
+
+        
+        
+        
+        
         // Do any additional setup after loading the view.
     }
 

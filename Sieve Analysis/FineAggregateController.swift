@@ -96,6 +96,8 @@ class FineAggregateController: UIViewController {
 
         wetMass.keyboardType = UIKeyboardType.DecimalPad
         dryMass.keyboardType = UIKeyboardType.DecimalPad
+        
+        drawBoarder()
 
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
@@ -147,6 +149,55 @@ class FineAggregateController: UIViewController {
             fm7.hidden = false
             
         }
+    }
+    
+    func drawBoarder()
+    {
+        retained1.layer.borderWidth = 0.5
+        retained1.layer.borderColor = UIColor.blackColor().CGColor
+        
+        retained2.layer.borderWidth = 0.5
+        retained2.layer.borderColor = UIColor.blackColor().CGColor
+        
+        retained3.layer.borderWidth = 0.5
+        retained3.layer.borderColor = UIColor.blackColor().CGColor
+        
+        retained4.layer.borderWidth = 0.5
+        retained4.layer.borderColor = UIColor.blackColor().CGColor
+        
+        retained5.layer.borderWidth = 0.5
+        retained5.layer.borderColor = UIColor.blackColor().CGColor
+        
+        retained6.layer.borderWidth = 0.5
+        retained6.layer.borderColor = UIColor.blackColor().CGColor
+        
+        retained7.layer.borderWidth = 0.5
+        retained7.layer.borderColor = UIColor.blackColor().CGColor
+        
+        retained8.layer.borderWidth = 0.5
+        retained8.layer.borderColor = UIColor.blackColor().CGColor
+        
+        retained9.layer.borderWidth = 0.5
+        retained9.layer.borderColor = UIColor.blackColor().CGColor
+        
+        Passed1.layer.borderWidth = 0.5
+        Passed1.layer.borderColor = UIColor.blackColor().CGColor
+        Passed2.layer.borderWidth = 0.5
+        Passed2.layer.borderColor = UIColor.blackColor().CGColor
+        Passed3.layer.borderWidth = 0.5
+        Passed3.layer.borderColor = UIColor.blackColor().CGColor
+        Passed4.layer.borderWidth = 0.5
+        Passed4.layer.borderColor = UIColor.blackColor().CGColor
+        Passed5.layer.borderWidth = 0.5
+        Passed5.layer.borderColor = UIColor.blackColor().CGColor
+        Passed6.layer.borderWidth = 0.5
+        Passed6.layer.borderColor = UIColor.blackColor().CGColor
+        Passed7.layer.borderWidth = 0.5
+        Passed7.layer.borderColor = UIColor.blackColor().CGColor
+        
+        
+        
+    
     }
     
     @IBAction func computePressed(sender: AnyObject)
