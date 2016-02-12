@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="Sand" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dry" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sand1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sand2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sand3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sand4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sand5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sand6" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sand7" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sand8" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wet" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Sand" positionX="-63" positionY="-18" width="128" height="210"/>
+    </elements>
+</model>

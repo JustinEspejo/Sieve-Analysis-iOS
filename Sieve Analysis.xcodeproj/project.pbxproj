@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		ED032DF61C54479900CEC13C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED032DF51C54479900CEC13C /* MainViewController.swift */; };
+		ED099BAC1C6D19160086DBB7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED099BAA1C6D19160086DBB7 /* Model.xcdatamodeld */; };
+		ED099BB01C6E70950086DBB7 /* SavedFormsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED099BAF1C6E70950086DBB7 /* SavedFormsViewController.swift */; };
 		ED24BEE91C52EAFC00AB628E /* CoursePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24BEE81C52EAFC00AB628E /* CoursePickerViewController.swift */; };
 		ED61ADA31C543DDE00156324 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED61ADA21C543DDE00156324 /* CreditsViewController.swift */; };
 		ED8BAE4B1C48CF80003DD19D /* CourseAggregateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BAE4A1C48CF80003DD19D /* CourseAggregateViewController.swift */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		ED032DF51C54479900CEC13C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		ED099BAB1C6D19160086DBB7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		ED099BAF1C6E70950086DBB7 /* SavedFormsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedFormsViewController.swift; sourceTree = "<group>"; };
 		ED24BEE81C52EAFC00AB628E /* CoursePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursePickerViewController.swift; sourceTree = "<group>"; };
 		ED61ADA21C543DDE00156324 /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		ED8BAE4A1C48CF80003DD19D /* CourseAggregateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseAggregateViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED099BAE1C6E705B0086DBB7 /* Saved Forms */ = {
+			isa = PBXGroup;
+			children = (
+				ED099BAF1C6E70950086DBB7 /* SavedFormsViewController.swift */,
+			);
+			name = "Saved Forms";
+			path = ..;
+			sourceTree = "<group>";
+		};
 		ED24BEEA1C52EB0800AB628E /* Course */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				EDE7EFED1C4870F700177A8D /* AppDelegate.swift */,
+				ED099BAA1C6D19160086DBB7 /* Model.xcdatamodeld */,
 				EDE7EFF11C4870F800177A8D /* Main.storyboard */,
 				EDE7EFF41C4870F800177A8D /* Assets.xcassets */,
 				ED032DF51C54479900CEC13C /* MainViewController.swift */,
@@ -133,6 +147,7 @@
 				EDE7EFF91C4870F800177A8D /* Info.plist */,
 				ED61ADA21C543DDE00156324 /* CreditsViewController.swift */,
 				ED24BEEA1C52EB0800AB628E /* Course */,
+				ED099BAE1C6E705B0086DBB7 /* Saved Forms */,
 				ED24BEEB1C52EB4500AB628E /* Fine */,
 			);
 			path = "Sieve Analysis";
@@ -293,6 +308,8 @@
 				ED8BAE4B1C48CF80003DD19D /* CourseAggregateViewController.swift in Sources */,
 				ED8BAE4D1C48CFCA003DD19D /* FineAggregateController.swift in Sources */,
 				ED24BEE91C52EAFC00AB628E /* CoursePickerViewController.swift in Sources */,
+				ED099BB01C6E70950086DBB7 /* SavedFormsViewController.swift in Sources */,
+				ED099BAC1C6D19160086DBB7 /* Model.xcdatamodeld in Sources */,
 				ED032DF61C54479900CEC13C /* MainViewController.swift in Sources */,
 				EDE7EFEE1C4870F700177A8D /* AppDelegate.swift in Sources */,
 				EDB566CD1C558079006806B1 /* LaunchScreen.swift in Sources */,
@@ -550,6 +567,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ED099BAA1C6D19160086DBB7 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ED099BAB1C6D19160086DBB7 /* Model.xcdatamodel */,
+			);
+			currentVersion = ED099BAB1C6D19160086DBB7 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EDE7EFE21C4870F700177A8D /* Project object */;
 }

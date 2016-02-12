@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class FineAggregateController: UIViewController {
 
     @IBOutlet weak var mySwitch: UISwitch!
 
     @IBOutlet weak var specLabel: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var computeButton: UIBarButtonItem!
     
@@ -105,8 +107,85 @@ class FineAggregateController: UIViewController {
 
         
     }
+    @IBAction func saveButtonPressed(sender: AnyObject)
+    {
+        let alert = UIAlertController(title: "New Name",
+            message: "Type the date/name of form.",
+            preferredStyle: .Alert)
+        
+        let saveAction = UIAlertAction(title: "Save",
+            style: .Default,
+            handler: { (action:UIAlertAction) -> Void in
+                
+                let textField = alert.textFields!.first
+                self.saveForm(textField!.text!)
+                self.successInput()
+
+
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel",
+            style: .Default) { (action: UIAlertAction) -> Void in
+        }
+        
+        alert.addTextFieldWithConfigurationHandler {
+            (textField: UITextField) -> Void in
+        }
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        presentViewController(alert,
+            animated: true,
+            completion: nil)
     
-    @IBAction func switchSpec(sender: AnyObject) {
+    
+    }
+    
+    func saveForm(date:String)
+    {
+    
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let entity =  NSEntityDescription.entityForName("Sand",
+            inManagedObjectContext:managedContext)
+        
+        let input = NSManagedObject(entity: entity!,
+            insertIntoManagedObjectContext: managedContext)
+        
+        //3
+        input.setValue(date, forKey: "date")
+        input.setValue(input1.text, forKey: "sand1")
+        input.setValue(input2.text, forKey: "sand2")
+        input.setValue(input3.text, forKey: "sand3")
+        input.setValue(input4.text, forKey: "sand4")
+        input.setValue(input5.text, forKey: "sand5")
+        input.setValue(input6.text, forKey: "sand6")
+        input.setValue(input7.text, forKey: "sand7")
+        input.setValue(input8.text, forKey: "sand8")
+        input.setValue(wetMass.text, forKey: "wet")
+        input.setValue(dryMass.text, forKey: "dry")
+
+
+        
+        //4
+        do {
+            try managedContext.save()
+            print("save successful")
+            //5
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+
+        }
+    
+    }
+    
+    @IBAction func switchSpec(sender: AnyObject)
+    {
         if mySwitch.on {
 
             specLabel.text = "Spec"
@@ -341,6 +420,14 @@ class FineAggregateController: UIViewController {
         let alertController = UIAlertController(title: "Error", message:
             "Invalid Input, Please type valid input!", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func successInput(){
+        let alertController = UIAlertController(title: "Success", message:
+            "You have successfully saved the form!", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
         
         self.presentViewController(alertController, animated: true, completion: nil)
     }
