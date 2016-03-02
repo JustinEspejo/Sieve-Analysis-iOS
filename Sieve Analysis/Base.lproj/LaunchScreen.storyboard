@@ -20,7 +20,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeH-OJ-Bk9">
                                 <rect key="frame" x="192" y="289" width="217" height="21"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Sieve Analysis Calculator 1.0">
+                                    <fragment content="Sieve Analysis Calculator 2.0">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="18" name="GillSans"/>

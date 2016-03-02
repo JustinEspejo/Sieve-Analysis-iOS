@@ -9,11 +9,11 @@
 import UIKit
 import CoreData
 
-class SavedFormsViewController: UIViewController {
+class SavedFormsViewController2: UIViewController {
     
-    var sand = [NSManagedObject]()
+    var stone = [NSManagedObject]()
     @IBOutlet weak var tableView: UITableView!
-
+    
     var segueValue1 : String = "0"
     var segueValue2 : String = "0"
     var segueValue3 : String = "0"
@@ -24,7 +24,8 @@ class SavedFormsViewController: UIViewController {
     var segueValue8 : String = "0"
     var segueWet = "0"
     var segueDry = "0"
-
+    var typeSaved : String = ""
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -35,12 +36,12 @@ class SavedFormsViewController: UIViewController {
         let managedContext = appDelegate.managedObjectContext
         
         //2
-        let fetchRequest = NSFetchRequest(entityName: "Sand")
+        let fetchRequest = NSFetchRequest(entityName: "Stone")
         
         //3
         do {
             let results = try managedContext.executeFetchRequest(fetchRequest)
-            sand = results as! [NSManagedObject]
+            stone = results as! [NSManagedObject]
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
@@ -54,17 +55,17 @@ class SavedFormsViewController: UIViewController {
             forCellReuseIdentifier: "Cell")
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier=="SandSegue"{
-            if let destination = segue.destinationViewController as? FineAggregateController
+        if segue.identifier=="StoneSegue"{
+            if let destination = segue.destinationViewController as? CourseAggregateViewController
             {
-            
+                
                 destination.segueWet = segueWet
                 destination.segueDry = segueDry
                 destination.segue1 = segueValue1
@@ -73,30 +74,29 @@ class SavedFormsViewController: UIViewController {
                 destination.segue4 = segueValue4
                 destination.segue5 = segueValue5
                 destination.segue6 = segueValue6
-                destination.segue7 = segueValue7
-                destination.segue8 = segueValue8
                 destination.isPassed = true
+                destination.type = typeSaved
                 
-            
+                
             }
         }
     }
     
 }
-extension SavedFormsViewController : UITableViewDataSource {
+extension SavedFormsViewController2 : UITableViewDataSource {
     
-//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        return 2
-//    }
-//    
+    //    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    //        return 2
+    //    }
+    //
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Sand"
+        return "Stone"
     }
     
     func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
-            print(sand.count)
-            return sand.count
+            print(stone.count)
+            return stone.count
     }
     
     func tableView(tableView: UITableView,
@@ -104,8 +104,8 @@ extension SavedFormsViewController : UITableViewDataSource {
         indexPath: NSIndexPath) -> UITableViewCell {
             
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
-
-            let aggregate = sand[sand.count-indexPath.row-1]
+            
+            let aggregate = stone[stone.count-indexPath.row-1]
             
             cell!.textLabel!.text = aggregate.valueForKey("date") as? String
             
@@ -116,9 +116,9 @@ extension SavedFormsViewController : UITableViewDataSource {
     
 }
 
-extension SavedFormsViewController : UITableViewDelegate
+extension SavedFormsViewController2 : UITableViewDelegate
 {
-
+    
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         // 1
         if editingStyle == .Delete {
@@ -128,32 +128,30 @@ extension SavedFormsViewController : UITableViewDelegate
             let moc = appDelegate.managedObjectContext
             
             // 3
-            moc.deleteObject(sand[sand.count-indexPath.row-1])
+            moc.deleteObject(stone[stone.count-indexPath.row-1])
             appDelegate.saveContext()
             
             // 4
-            sand.removeAtIndex(sand.count-indexPath.row-1)
+            stone.removeAtIndex(stone.count-indexPath.row-1)
             tableView.reloadData()
         }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("yeah")
-        let aggregate = sand[sand.count-indexPath.row-1]
-        segueValue1 = (aggregate.valueForKey("sand1") as? String)!
-        segueValue2 = (aggregate.valueForKey("sand2") as? String)!
-        segueValue3 = (aggregate.valueForKey("sand3") as? String)!
-        segueValue4 = (aggregate.valueForKey("sand4") as? String)!
-        segueValue5 = (aggregate.valueForKey("sand5") as? String)!
-        segueValue6 = (aggregate.valueForKey("sand6") as? String)!
-        segueValue7 = (aggregate.valueForKey("sand7") as? String)!
-        segueValue8 = (aggregate.valueForKey("sand8") as? String)!
+        let aggregate = stone[stone.count-indexPath.row-1]
+        segueValue1 = (aggregate.valueForKey("stone1") as? String)!
+        segueValue2 = (aggregate.valueForKey("stone2") as? String)!
+        segueValue3 = (aggregate.valueForKey("stone3") as? String)!
+        segueValue4 = (aggregate.valueForKey("stone4") as? String)!
+        segueValue5 = (aggregate.valueForKey("stone5") as? String)!
+        segueValue6 = (aggregate.valueForKey("stone6") as? String)!
         segueWet = (aggregate.valueForKey("wet") as? String)!
         segueDry = (aggregate.valueForKey("dry") as? String)!
-
-        self.performSegueWithIdentifier("SandSegue", sender: self)
+        typeSaved = (aggregate.valueForKey("type") as? String)!
+        print(typeSaved)
+        self.performSegueWithIdentifier("StoneSegue", sender: self)
         
-
+        
     }
 }
 

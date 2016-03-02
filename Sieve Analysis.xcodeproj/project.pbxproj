@@ -15,6 +15,7 @@
 		ED8BAE4B1C48CF80003DD19D /* CourseAggregateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BAE4A1C48CF80003DD19D /* CourseAggregateViewController.swift */; };
 		ED8BAE4D1C48CFCA003DD19D /* FineAggregateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BAE4C1C48CFCA003DD19D /* FineAggregateController.swift */; };
 		EDB566CD1C558079006806B1 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB566CC1C558079006806B1 /* LaunchScreen.swift */; };
+		EDE7C29C1C86BA0100CCF1EE /* SavedForms2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE7C29B1C86BA0100CCF1EE /* SavedForms2ViewController.swift */; };
 		EDE7EFEE1C4870F700177A8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE7EFED1C4870F700177A8D /* AppDelegate.swift */; };
 		EDE7EFF31C4870F800177A8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE7EFF11C4870F800177A8D /* Main.storyboard */; };
 		EDE7EFF51C4870F800177A8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE7EFF41C4870F800177A8D /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		ED8BAE4A1C48CF80003DD19D /* CourseAggregateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseAggregateViewController.swift; sourceTree = "<group>"; };
 		ED8BAE4C1C48CFCA003DD19D /* FineAggregateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FineAggregateController.swift; sourceTree = "<group>"; };
 		EDB566CC1C558079006806B1 /* LaunchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		EDE7C29B1C86BA0100CCF1EE /* SavedForms2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedForms2ViewController.swift; sourceTree = "<group>"; };
 		EDE7EFEA1C4870F700177A8D /* Sieve Analysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sieve Analysis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE7EFED1C4870F700177A8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDE7EFF21C4870F800177A8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				ED099BAF1C6E70950086DBB7 /* SavedFormsViewController.swift */,
+				EDE7C29B1C86BA0100CCF1EE /* SavedForms2ViewController.swift */,
 			);
 			name = "Saved Forms";
 			path = ..;
@@ -310,6 +313,7 @@
 				ED24BEE91C52EAFC00AB628E /* CoursePickerViewController.swift in Sources */,
 				ED099BB01C6E70950086DBB7 /* SavedFormsViewController.swift in Sources */,
 				ED099BAC1C6D19160086DBB7 /* Model.xcdatamodeld in Sources */,
+				EDE7C29C1C86BA0100CCF1EE /* SavedForms2ViewController.swift in Sources */,
 				ED032DF61C54479900CEC13C /* MainViewController.swift in Sources */,
 				EDE7EFEE1C4870F700177A8D /* AppDelegate.swift in Sources */,
 				EDB566CD1C558079006806B1 /* LaunchScreen.swift in Sources */,

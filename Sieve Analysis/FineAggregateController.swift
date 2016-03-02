@@ -11,6 +11,19 @@ import CoreData
 
 class FineAggregateController: UIViewController {
 
+    var isPassed = false
+    var segue1 : String!
+    var segue2 : String!
+    var segue3 : String!
+    var segue4 : String!
+    var segue5 : String!
+    var segue6 : String!
+    var segue7 : String!
+    var segue8 : String!
+    var segueWet : String!
+    var segueDry : String!
+
+
     @IBOutlet weak var mySwitch: UISwitch!
 
     @IBOutlet weak var specLabel: UILabel!
@@ -80,10 +93,35 @@ class FineAggregateController: UIViewController {
 
     
     
+    override func viewDidAppear(animated: Bool)
+    {
+        if(isPassed)
+        {
+            
+            input1.text = segue1
+            input2.text = segue2
+            input3.text = segue3
+            input4.text = segue4
+            input5.text = segue5
+            input6.text = segue6
+            input7.text = segue7
+            input8.text = segue8
+            wetMass.text = segueWet
+            dryMass.text = segueDry
+            isPassed = false
+            self.computeMoisture()
+            self.sieveAnalysis()
+            
+        }
+        
+    }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+   
+        
         scrollView.contentSize.width = 650
         scrollView.contentSize.height = 650
         

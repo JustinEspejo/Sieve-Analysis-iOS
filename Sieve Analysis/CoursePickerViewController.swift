@@ -40,7 +40,8 @@ class CoursePickerViewController: UIViewController {
         let vcPass = segue.destinationViewController as! CourseAggregateViewController
         
         if(segue.identifier == "seg67"){
-        
+            
+            vcPass.type = "seg67"
             vcPass.item1 = "1\""
             vcPass.item2 = "3/4\""
             vcPass.item3 = "3/8\""
@@ -53,13 +54,12 @@ class CoursePickerViewController: UIViewController {
             vcPass.spec4 = "0-10"
             vcPass.spec5 = "0-5"
 
-
-
             
         }
         
         else if(segue.identifier == "seg57"){
             
+            vcPass.type = "seg57"
             vcPass.item1 = "1 1/2\""
             vcPass.item2 = "1\""
             vcPass.item3 = "1/2\""
@@ -75,6 +75,8 @@ class CoursePickerViewController: UIViewController {
         }
         
         else if(segue.identifier == "seg357"){
+            
+            vcPass.type = "seg357"
             vcPass.item1 = "2 1/2\""
             vcPass.item2 = "2\""
             vcPass.item3 = "1\""
@@ -89,6 +91,8 @@ class CoursePickerViewController: UIViewController {
         }
         
         else if(segue.identifier == "seg8"){
+            
+            vcPass.type = "seg8"
             vcPass.item1 = "1/2\""
             vcPass.item2 = "3/8\""
             vcPass.item3 = "#4"
@@ -103,6 +107,8 @@ class CoursePickerViewController: UIViewController {
         }
         
         else {
+            
+            vcPass.type = "state"
             vcPass.item1 = "1 1/2\""
             vcPass.item2 = "1\""
             vcPass.item3 = "1/2\""

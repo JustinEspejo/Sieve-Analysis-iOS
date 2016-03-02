@@ -6,6 +6,7 @@
 //  Copyright © 2016 Snowcialite. All rights reserved.
 //
 
+import CoreData
 import UIKit
 
 class CourseAggregateViewController: UIViewController {
@@ -21,6 +22,18 @@ class CourseAggregateViewController: UIViewController {
     var spec3 : String = " "
     var spec4 : String = " "
     var spec5 : String = " "
+    
+    var segue1 : String = " "
+    var segue2 : String = " "
+    var segue3 : String = " "
+    var segue4 : String = " "
+    var segue5 : String = " "
+    var segue6 : String = " "
+    var segueWet : String = " "
+    var segueDry : String = " "
+    var isPassed = false
+    var type : String = " "
+    
 
     @IBOutlet weak var wetMass: UITextField!
     @IBOutlet weak var dryMass: UITextField!
@@ -72,6 +85,106 @@ class CourseAggregateViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool)
     {
+        if(isPassed)
+        {
+            mass1.text = segue1
+            mass2.text = segue2
+            mass3.text = segue3
+            mass4.text = segue4
+            mass5.text = segue5
+            mass6.text = segue6
+            wetMass.text = segueWet
+            dryMass.text = segueDry
+            isPassed = false
+            self.computeMoisture()
+            self.sieveAnalysis()
+            
+            switch(type){
+            
+                
+                case "seg67":
+                print("yeah!")
+                item1 = "1\""
+                item2 = "3/4\""
+                item3 = "3/8\""
+                item4 = "#4"
+                item5 = "#8"
+                
+                spec1 = "100"
+                spec2 = "90-100"
+                spec3 = "20-55"
+                spec4 = "0-10"
+                spec5 = "0-5"
+                break
+                
+    
+                case "seg57":
+                item1 = "1 1/2\""
+                item2 = "1\""
+                item3 = "1/2\""
+                item4 = "#4"
+                item5 = "#8"
+                
+                spec1 = "100"
+                spec2 = "95-100"
+                spec3 = "25-60"
+                spec4 = "0-10"
+                spec5 = "0-5"
+                break
+                
+                
+                case "seg357":
+                item1 = "2 1/2\""
+                item2 = "2\""
+                item3 = "1\""
+                item4 = "1/2\""
+                item5 = "#4"
+                spec1 = "100"
+                spec2 = "95-100"
+                spec3 = "35-70"
+                spec4 = "10-30"
+                spec5 = "0-5"
+                break
+                
+                
+                 case "seg8":
+                item1 = "1/2\""
+                item2 = "3/8\""
+                item3 = "#4"
+                item4 = "#8"
+                item5 = "#16"
+                
+                spec1 = "100"
+                spec2 = "85-100"
+                spec3 = "10-30"
+                spec4 = "0-10"
+                spec5 = "0-5"
+                break
+                
+                case "state":
+                item1 = "1 1/2\""
+                item2 = "1\""
+                item3 = "1/2\""
+                item4 = "1/4\""
+                item5 = " "
+                
+                spec1 = "100"
+                spec2 = "93-100"
+                spec3 = "27-58"
+                spec4 = "0-8"
+                spec5 = " "
+                break
+                
+                default:
+                break
+                
+                }
+
+        
+        }
+        
+        
+        
         
         size1.text = item1
         size2.text = item2
@@ -149,24 +262,94 @@ class CourseAggregateViewController: UIViewController {
         ret7.layer.borderWidth = 0.5
         ret7.layer.borderColor = UIColor.blackColor().CGColor
 
-
-        
-        
-        
-        
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func saveButtonPressed(sender: AnyObject)
+    {
+        let alert = UIAlertController(title: "New Name",
+            message: "Type the date/name of form.",
+            preferredStyle: .Alert)
+        
+        let saveAction = UIAlertAction(title: "Save",
+            style: .Default,
+            handler: { (action:UIAlertAction) -> Void in
+                
+                let textField = alert.textFields!.first
+                self.saveForm(textField!.text!)
+                self.successInput()
+                
+                
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel",
+            style: .Default) { (action: UIAlertAction) -> Void in
+        }
+        
+        alert.addTextFieldWithConfigurationHandler {
+            (textField: UITextField) -> Void in
+        }
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        presentViewController(alert,
+            animated: true,
+            completion: nil)
+        
+        
     }
     
+    func saveForm(date:String)
+    {
+        
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let entity =  NSEntityDescription.entityForName("Stone",
+            inManagedObjectContext:managedContext)
+        
+        let input = NSManagedObject(entity: entity!,
+            insertIntoManagedObjectContext: managedContext)
+        
+        //3
+        input.setValue(date, forKey: "date")
+        input.setValue(mass1.text, forKey: "stone1")
+        input.setValue(mass2.text, forKey: "stone2")
+        input.setValue(mass3.text, forKey: "stone3")
+        input.setValue(mass4.text, forKey: "stone4")
+        input.setValue(mass5.text, forKey: "stone5")
+        input.setValue(mass6.text, forKey: "stone6")
+        input.setValue(wetMass.text, forKey: "wet")
+        input.setValue(dryMass.text, forKey: "dry")
+        input.setValue(type, forKey: "type")
 
+        
+        
+        
+        //4
+        do {
+            try managedContext.save()
+            print("save successful")
+            //5
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+            
+        }
+        
+    }
+    
     @IBAction func computePressed(sender: AnyObject)
     {
         computeMoisture()
-        
+        sieveAnalysis()
+
+    }
+    
+    func sieveAnalysis()
+    {
         let passed0 : Double = 100.0
         if let data1 = Double(mass1.text!){
             if let data2 = Double(mass2.text!){
@@ -174,19 +357,19 @@ class CourseAggregateViewController: UIViewController {
                     if let data4 = Double(mass4.text!){
                         if let data5 = Double(mass5.text!){
                             if let data6 = Double(mass6.text!){
-                                        let total = data1+data2+data3+data4+data5+data6
-                                        let retain1 = data1/total*100
-                                        let passed1 = passed0-retain1
-                                        let retain2 = data2/total*100
-                                        let passed2 = passed1-retain2
-                                        let retain3 = data3/total*100
-                                        let passed3 = passed2-retain3
-                                        let retain4 = data4/total*100
-                                        let passed4 = passed3-retain4
-                                        let retain5 = data5/total*100
-                                        let passed5 = passed4-retain5
-                                        let retain6 = data6/total*100
-                                        let retTotal = retain1+retain2+retain3+retain4+retain5+retain6
+                                let total = data1+data2+data3+data4+data5+data6
+                                let retain1 = data1/total*100
+                                let passed1 = passed0-retain1
+                                let retain2 = data2/total*100
+                                let passed2 = passed1-retain2
+                                let retain3 = data3/total*100
+                                let passed3 = passed2-retain3
+                                let retain4 = data4/total*100
+                                let passed4 = passed3-retain4
+                                let retain5 = data5/total*100
+                                let passed5 = passed4-retain5
+                                let retain6 = data6/total*100
+                                let retTotal = retain1+retain2+retain3+retain4+retain5+retain6
                                 
                                 massTotal.text = String(format:"%.2f", total)
                                 
@@ -247,5 +430,13 @@ class CourseAggregateViewController: UIViewController {
         
         scrollView.contentSize.height = 600
         
+    }
+    
+    func successInput(){
+        let alertController = UIAlertController(title: "Success", message:
+            "You have successfully saved the form!", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 }
