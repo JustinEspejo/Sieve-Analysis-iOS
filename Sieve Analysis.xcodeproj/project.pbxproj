@@ -16,12 +16,14 @@
 		ED8BAE4D1C48CFCA003DD19D /* FineAggregateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BAE4C1C48CFCA003DD19D /* FineAggregateController.swift */; };
 		EDB566CD1C558079006806B1 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB566CC1C558079006806B1 /* LaunchScreen.swift */; };
 		EDE7C29C1C86BA0100CCF1EE /* SavedForms2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE7C29B1C86BA0100CCF1EE /* SavedForms2ViewController.swift */; };
+		EDE7C29E1C86D1B300CCF1EE /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE7C29D1C86D1B300CCF1EE /* CustomCellTableViewCell.swift */; };
 		EDE7EFEE1C4870F700177A8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE7EFED1C4870F700177A8D /* AppDelegate.swift */; };
 		EDE7EFF31C4870F800177A8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE7EFF11C4870F800177A8D /* Main.storyboard */; };
 		EDE7EFF51C4870F800177A8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE7EFF41C4870F800177A8D /* Assets.xcassets */; };
 		EDE7EFF81C4870F800177A8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE7EFF61C4870F800177A8D /* LaunchScreen.storyboard */; };
 		EDE7F0031C4870F800177A8D /* Sieve_AnalysisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE7F0021C4870F800177A8D /* Sieve_AnalysisTests.swift */; };
 		EDE7F00E1C4870F800177A8D /* Sieve_AnalysisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE7F00D1C4870F800177A8D /* Sieve_AnalysisUITests.swift */; };
+		EDE911E41C86DA7400042E90 /* CustomCellTableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE911E31C86DA7400042E90 /* CustomCellTableViewCell1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,7 @@
 		ED8BAE4C1C48CFCA003DD19D /* FineAggregateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FineAggregateController.swift; sourceTree = "<group>"; };
 		EDB566CC1C558079006806B1 /* LaunchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		EDE7C29B1C86BA0100CCF1EE /* SavedForms2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedForms2ViewController.swift; sourceTree = "<group>"; };
+		EDE7C29D1C86D1B300CCF1EE /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
 		EDE7EFEA1C4870F700177A8D /* Sieve Analysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sieve Analysis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE7EFED1C4870F700177A8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDE7EFF21C4870F800177A8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 		EDE7F0091C4870F800177A8D /* Sieve AnalysisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sieve AnalysisUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE7F00D1C4870F800177A8D /* Sieve_AnalysisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sieve_AnalysisUITests.swift; sourceTree = "<group>"; };
 		EDE7F00F1C4870F800177A8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDE911E31C86DA7400042E90 /* CustomCellTableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,8 @@
 				EDE7EFF11C4870F800177A8D /* Main.storyboard */,
 				EDE7EFF41C4870F800177A8D /* Assets.xcassets */,
 				ED032DF51C54479900CEC13C /* MainViewController.swift */,
+				EDE911E31C86DA7400042E90 /* CustomCellTableViewCell1.swift */,
+				EDE7C29D1C86D1B300CCF1EE /* CustomCellTableViewCell.swift */,
 				EDE7EFF61C4870F800177A8D /* LaunchScreen.storyboard */,
 				EDB566CC1C558079006806B1 /* LaunchScreen.swift */,
 				EDE7EFF91C4870F800177A8D /* Info.plist */,
@@ -312,9 +318,11 @@
 				ED8BAE4D1C48CFCA003DD19D /* FineAggregateController.swift in Sources */,
 				ED24BEE91C52EAFC00AB628E /* CoursePickerViewController.swift in Sources */,
 				ED099BB01C6E70950086DBB7 /* SavedFormsViewController.swift in Sources */,
+				EDE7C29E1C86D1B300CCF1EE /* CustomCellTableViewCell.swift in Sources */,
 				ED099BAC1C6D19160086DBB7 /* Model.xcdatamodeld in Sources */,
 				EDE7C29C1C86BA0100CCF1EE /* SavedForms2ViewController.swift in Sources */,
 				ED032DF61C54479900CEC13C /* MainViewController.swift in Sources */,
+				EDE911E41C86DA7400042E90 /* CustomCellTableViewCell1.swift in Sources */,
 				EDE7EFEE1C4870F700177A8D /* AppDelegate.swift in Sources */,
 				EDB566CD1C558079006806B1 /* LaunchScreen.swift in Sources */,
 				ED61ADA31C543DDE00156324 /* CreditsViewController.swift in Sources */,

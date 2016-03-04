@@ -11,6 +11,7 @@
         <attribute name="sand6" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sand7" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sand8" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wet" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Stone" isAbstract="YES" syncable="YES">
@@ -22,11 +23,12 @@
         <attribute name="stone4" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="stone5" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="stone6" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wet" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Sand" positionX="-63" positionY="-18" width="128" height="210"/>
-        <element name="Stone" positionX="-63" positionY="63" width="128" height="195"/>
+        <element name="Sand" positionX="-63" positionY="-18" width="128" height="225"/>
+        <element name="Stone" positionX="-63" positionY="63" width="128" height="210"/>
     </elements>
 </model>

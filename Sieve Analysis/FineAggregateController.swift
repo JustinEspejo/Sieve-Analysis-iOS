@@ -147,8 +147,8 @@ class FineAggregateController: UIViewController {
     }
     @IBAction func saveButtonPressed(sender: AnyObject)
     {
-        let alert = UIAlertController(title: "New Name",
-            message: "Type the date/name of form.",
+        let alert = UIAlertController(title: "New Form",
+            message: "Type the name of form.",
             preferredStyle: .Alert)
         
         let saveAction = UIAlertAction(title: "Save",
@@ -182,6 +182,8 @@ class FineAggregateController: UIViewController {
     
     func saveForm(date:String)
     {
+        let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
+        print("saved at " + timestamp)
     
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
@@ -207,6 +209,7 @@ class FineAggregateController: UIViewController {
         input.setValue(input8.text, forKey: "sand8")
         input.setValue(wetMass.text, forKey: "wet")
         input.setValue(dryMass.text, forKey: "dry")
+        input.setValue(timestamp, forKey: "timestamp")
 
 
         

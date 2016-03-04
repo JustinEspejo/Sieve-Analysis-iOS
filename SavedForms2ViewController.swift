@@ -103,13 +103,17 @@ extension SavedFormsViewController2 : UITableViewDataSource {
         cellForRowAtIndexPath
         indexPath: NSIndexPath) -> UITableViewCell {
             
-            let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as! CustomCellTableViewCell
             
             let aggregate = stone[stone.count-indexPath.row-1]
             
-            cell!.textLabel!.text = aggregate.valueForKey("date") as? String
             
-            return cell!
+            cell.name.text = aggregate.valueForKey("date") as? String
+            
+            cell.timestamp.text = aggregate.valueForKey("timestamp") as? String
+            
+            return cell
+
     }
     
     

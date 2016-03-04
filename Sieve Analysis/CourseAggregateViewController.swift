@@ -266,14 +266,13 @@ class CourseAggregateViewController: UIViewController {
 
     @IBAction func saveButtonPressed(sender: AnyObject)
     {
-        let alert = UIAlertController(title: "New Name",
-            message: "Type the date/name of form.",
+        let alert = UIAlertController(title: "New Form",
+            message: "Type the name of form.",
             preferredStyle: .Alert)
         
         let saveAction = UIAlertAction(title: "Save",
             style: .Default,
             handler: { (action:UIAlertAction) -> Void in
-                
                 let textField = alert.textFields!.first
                 self.saveForm(textField!.text!)
                 self.successInput()
@@ -301,7 +300,8 @@ class CourseAggregateViewController: UIViewController {
     
     func saveForm(date:String)
     {
-        
+        let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
+        print("saved at " + timestamp)
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -325,6 +325,7 @@ class CourseAggregateViewController: UIViewController {
         input.setValue(wetMass.text, forKey: "wet")
         input.setValue(dryMass.text, forKey: "dry")
         input.setValue(type, forKey: "type")
+        input.setValue(timestamp, forKey: "timestamp")
 
         
         
